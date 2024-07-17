@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+class Person {
+public:
+    // Конструктор
+    Person(std::string name, std::string fam, int age) 
+        : name(name), fam(fam), age(age) {}
+
+    // Метод для вывода информации о персоне
+    void print_name() const {
+        std::cout << "Персона " << name << " " << fam << " возрастом " << age << std::endl;
+    }
+
+    // Метод для увеличения возраста персоны
+    void age_person(int year) {
+        age += year;
+    }
+
+private:
+    std::string name;
+    std::string fam;
+    int age;
+};
+
+int main() {
+    Person persona1("Василий", "Петров", 45);
+    Person persona2("Лука", "Турок", 66);
+    persona1.age_person(30);
+
+    persona1.print_name();
+    persona2.print_name();
+
+    return 0;
+}
